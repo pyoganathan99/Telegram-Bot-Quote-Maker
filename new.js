@@ -2,6 +2,9 @@ const Jimp = require('jimp');
 const fs = require('fs');
 const _ = require('lodash');
 
+const server = require('server');
+const { get } = server.router;
+
 const sendFile = require('./send-file');
 
 const BLUE = 0x2196f3ff;
@@ -44,7 +47,7 @@ function drawBorder(img, color) {
 
 }
 
-(async function () {
+async function createPostAndSend(text) {
 
     let img = await new Jimp(1080, 1080, 0x131313ff);
 
@@ -64,4 +67,14 @@ function drawBorder(img, color) {
 
     fs.unlink('tmp/quote.jpg', () => { })
 
-})();
+}
+
+server(
+    {
+        port: parseInt(process.env.PORT),
+        log: 'emergency',
+    },
+    [
+        get('/', ctx => 'hi'),
+    ]
+)
