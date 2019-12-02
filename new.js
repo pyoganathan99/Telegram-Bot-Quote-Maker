@@ -58,7 +58,7 @@ async function createPostAndSend(text) {
         drawBorder(img, BLUE);
 
         img.print(font, BORDER + PADDING, BORDER + PADDING, {
-            text: "Stay low, no matter what. Keep pushing. ❤️",
+            text: text,
             alignmentX: Jimp.HORIZONTAL_ALIGN_LEFT,
             alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
         }, WIDTH - 2 * (BORDER + PADDING), HEIGHT - 2 * (BORDER + PADDING))
@@ -79,10 +79,14 @@ server(
     {
         port: parseInt(process.env.PORT),
         log: 'emergency',
+        security: {
+            csrf: false,
+        }
     },
     [
         post('/', ctx => {
-            //createPostAndSend(ctx.data.message.text);
+            console.log(ctx.data);
+            createPostAndSend(ctx.data.message.text);
             return 'ok';
         }),
         get('/', () => {
