@@ -82,7 +82,7 @@ server(
     },
     [
         post('/', ctx => {
-            createPostAndSend(ctx.data.message.text);
+            //createPostAndSend(ctx.data.message.text);
             return 'ok';
         }),
         get('/', () => {
