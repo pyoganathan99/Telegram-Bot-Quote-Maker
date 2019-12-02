@@ -75,6 +75,9 @@ server(
         log: 'emergency',
     },
     [
-        get('/', ctx => 'hi'),
+        post('/', ctx => {
+            createPostAndSend(ctx.data.message.text);
+            return 'ok';
+        }),
     ]
 )
