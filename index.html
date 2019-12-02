@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    main {
+        /* background: #131313; */
+        width: 480px;
+        height: 480px;
+        border: solid 24px #2196f3;
+        font-family: 'Arvo';
+        color: white;
+        padding: 52px;
+        font-size: 300%;
+        display: flex;
+        align-content: center;
+        background:
+            /* linear-gradient(90deg, #131313 20px, transparent 20%) center, */
+            linear-gradient(45deg, #131313 20px, transparent 20%) center,
+            #ffffff;
+        background-size: 18px 2px;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        line-height: 1.5;
+    }
+</style>
+
+<body>
+    <main>
+        <span>
+            ${text}
+        </span>
+    </main>
+</body>
+
+</html>
