@@ -67,7 +67,7 @@ async function createPostAndSend(text) {
 
         sendFile('tmp/quote.jpg');
 
-        fs.unlink('tmp/quote.jpg', () => { }) \
+        fs.unlink('tmp/quote.jpg', () => { })
 
     } catch (e) {
         console.log(e);
