@@ -3,7 +3,7 @@ const fs = require('fs');
 const _ = require('lodash');
 
 const server = require('server');
-const { get } = server.router;
+const { get, post } = server.router;
 
 const sendFile = require('./send-file');
 
