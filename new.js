@@ -7,13 +7,30 @@ const { get, post } = server.router;
 
 const sendFile = require('./send-file');
 
-const BLUE = 0x2196f3ff;
-
 const HEIGHT = 1080;
 const WIDTH = 1080;
 
 const BORDER = 48;
 const PADDING = 72;
+
+const colors = {
+    "RED ": 0xf44336ff,
+    "PIN ": 0xe91e63ff,
+    "PUR ": 0x9c27b0ff,
+    "DPU ": 0x673ab7ff,
+    "IND ": 0x3f51b5ff,
+    "BLU ": 0x2196f3ff,
+    "LBL ": 0x03a9f4ff,
+    "CYA ": 0x00bcd4ff,
+    "TEA ": 0x009688ff,
+    "GRE ": 0x4caf50ff,
+    "LGR ": 0x8bc34aff,
+    "LIM ": 0xcddc39ff,
+    "YEL ": 0xffeb3bff,
+    "AMB ": 0xffc107ff,
+    "ORA ": 0xff9800ff,
+    "DOR ": 0xff5722ff,
+}
 
 function drawBorder(img, color) {
 
@@ -49,13 +66,21 @@ function drawBorder(img, color) {
 
 async function createPostAndSend(text) {
 
+    let colorKey = text.split(' ').shift();
+    let color;
+    if (colors.hasOwnProperty(colorKey)) {
+        color = colors[colorKey];
+    } else {
+        color = _.sample(Object.values(colors));
+    }
+
     try {
 
         let img = await new Jimp(1080, 1080, 0x131313ff);
 
         let font = await Jimp.loadFont('font/font.fnt');
 
-        drawBorder(img, BLUE);
+        drawBorder(img, color);
 
         img.print(font, BORDER + PADDING, BORDER + PADDING, {
             text: text,
