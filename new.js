@@ -49,23 +49,29 @@ function drawBorder(img, color) {
 
 async function createPostAndSend(text) {
 
-    let img = await new Jimp(1080, 1080, 0x131313ff);
+    try {
 
-    let font = await Jimp.loadFont('font/font.fnt');
+        let img = await new Jimp(1080, 1080, 0x131313ff);
 
-    drawBorder(img, BLUE);
+        let font = await Jimp.loadFont('font/font.fnt');
 
-    img.print(font, BORDER + PADDING, BORDER + PADDING, {
-        text: "Stay low, no matter what. Keep pushing. ❤️",
-        alignmentX: Jimp.HORIZONTAL_ALIGN_LEFT,
-        alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
-    }, WIDTH - 2 * (BORDER + PADDING), HEIGHT - 2 * (BORDER + PADDING))
+        drawBorder(img, BLUE);
 
-    img.write('tmp/quote.jpg');
+        img.print(font, BORDER + PADDING, BORDER + PADDING, {
+            text: "Stay low, no matter what. Keep pushing. ❤️",
+            alignmentX: Jimp.HORIZONTAL_ALIGN_LEFT,
+            alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
+        }, WIDTH - 2 * (BORDER + PADDING), HEIGHT - 2 * (BORDER + PADDING))
 
-    sendFile('tmp/quote.jpg');
+        img.write('tmp/quote.jpg');
 
-    fs.unlink('tmp/quote.jpg', () => { })
+        sendFile('tmp/quote.jpg');
+
+        fs.unlink('tmp/quote.jpg', () => { }) \
+
+    } catch (e) {
+        console.log(e);
+    }
 
 }
 
