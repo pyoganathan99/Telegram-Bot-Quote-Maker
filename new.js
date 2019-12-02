@@ -14,22 +14,22 @@ const BORDER = 48;
 const PADDING = 72;
 
 const colors = {
-    "RED ": 0xf44336ff,
-    "PIN ": 0xe91e63ff,
-    "PUR ": 0x9c27b0ff,
-    "DPU ": 0x673ab7ff,
-    "IND ": 0x3f51b5ff,
-    "BLU ": 0x2196f3ff,
-    "LBL ": 0x03a9f4ff,
-    "CYA ": 0x00bcd4ff,
-    "TEA ": 0x009688ff,
-    "GRE ": 0x4caf50ff,
-    "LGR ": 0x8bc34aff,
-    "LIM ": 0xcddc39ff,
-    "YEL ": 0xffeb3bff,
-    "AMB ": 0xffc107ff,
-    "ORA ": 0xff9800ff,
-    "DOR ": 0xff5722ff,
+    "RED": 0xf44336ff,
+    "PIN": 0xe91e63ff,
+    "PUR": 0x9c27b0ff,
+    "DPU": 0x673ab7ff,
+    "IND": 0x3f51b5ff,
+    "BLU": 0x2196f3ff,
+    "LBL": 0x03a9f4ff,
+    "CYA": 0x00bcd4ff,
+    "TEA": 0x009688ff,
+    "GRE": 0x4caf50ff,
+    "LGR": 0x8bc34aff,
+    "LIM": 0xcddc39ff,
+    "YEL": 0xffeb3bff,
+    "AMB": 0xffc107ff,
+    "ORA": 0xff9800ff,
+    "DOR": 0xff5722ff,
 }
 
 function drawBorder(img, color) {
