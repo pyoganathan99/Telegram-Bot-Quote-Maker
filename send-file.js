@@ -8,7 +8,7 @@ async function sendFile(filePath) {
     fd.append('chat_id', '770488077');
     fd.append('document', fs.createReadStream(filePath));
 
-    return await axios.post('https://api.telegram.org/' + fs.readFileSync('.env').toString() + '/sendDocument', fd, {
+    return await axios.post('https://api.telegram.org/bot924630348:AAHOeD0XTyrxcdsZg9KyNX2j_efrOf32a88/sendDocument', fd, {
         headers: fd.getHeaders(),
         maxContentLength: Infinity,
         maxBodyLength: Infinity,
