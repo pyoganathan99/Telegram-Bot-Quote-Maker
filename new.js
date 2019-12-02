@@ -79,5 +79,8 @@ server(
             createPostAndSend(ctx.data.message.text);
             return 'ok';
         }),
+        get('/', () => {
+            return "Am working!"
+        })
     ]
 )
