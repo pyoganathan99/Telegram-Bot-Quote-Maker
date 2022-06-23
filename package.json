@@ -14,7 +14,7 @@
     "canvas": "^2.6.0",
     "html-to-image": "^0.1.1",
     "jimp": "^0.9.3",
-    "jsdom": "^15.2.1",
+    "jsdom": "^16.5.0",
     "node-fetch": "^2.6.0",
     "server": "^1.0.21"
   }
